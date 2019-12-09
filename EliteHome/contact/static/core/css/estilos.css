@@ -1,0 +1,130 @@
+/*** Add your styles here **/
+/** Sociales **/
+
+.navegacion{
+    background-color: #ffffff
+}
+.navbar-light .navbar-toggler{
+    background-color:  #ffffff
+}
+.navbar-light .navbar-brand,
+.navbar-light .navbar-brand:hover{
+background-color: #ffffff
+}
+
+.nav-link{
+    color: black;
+    transition: background-color .5 ease-in-out;
+}
+
+.nav-link:hover{
+    background-color: #e0f0f7;
+    color: #ffffff;
+}
+
+.sociales ul {
+    list-style: none;
+    margin:0;
+    padding:0;
+}
+.sociales ul li {
+    position: relative;
+    display: inline-block;
+}
+.sociales ul li a::before {
+    font-family: 'FontAwesome';
+    display: inline-block;
+    vertical-align: top;
+    padding: 0.4rem;
+    content: '\f08e';
+    -webkit-font-smoothing: antialiased;
+    font-size: 2rem;
+    color: #397ac4;
+}
+.sociales ul li a[href*="facebook.com"]::before{
+    content: '\f230';
+}
+.sociales ul li a[href*="twitter.com"]::before{
+    content: '\f081';
+}
+.sociales ul li a[href*="instagram.com"]::before{
+    content: '\f16d';
+}
+.sociales ul li a[href*="pinterest.com"]::before{
+    content: '\f0d2';
+}
+.sociales ul li a[href*="youtube.com"]::before{
+    content: '\f16a';
+}
+
+/** citas **/
+
+.citas {
+    background-image: url(../ImgLujo/lujo1.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    color: #f1e3e3;
+}
+
+@media (min-width: 992px) {
+    .citas {
+        background-size: cover;
+    }
+}
+.citas h3 {
+    font-size: 3.5rem;
+    font-family: 'Lato', sans-serif;
+}
+.citas p {
+    font-size: 1.2rem;
+    line-height: 2.6rem;
+}
+.btn-primary {
+    background-color: #4341c7;
+    border: 0;
+    padding: 1rem 5rem;
+    border-radius: 0;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.2rem;
+}
+.btn-primary:hover {
+  background-color: #335e5b;
+}
+
+/**contacto**/
+.formulario-contacto{
+    border: 2px solid #47a6e6;
+    background-color: #ffffff
+}
+
+
+/**Modelos**/
+.modelo {
+    background-repeat: no-repeat;
+    min-height: 40rem;
+}
+@media (min-width:768px) {
+    .modelo {
+        min-height: 30rem;
+    }
+}
+
+.premier {
+    background-image: url(../ImgLujo/slideeeee1.jpg);
+    background-position: top left;
+}
+.elite {
+    background-image: url(../ImgLujo/CasaLujoA/casalujo18.jpg);
+    background-position: bottom right;
+}
+
+html{
+    height: 100%;
+}
+body{
+    min-height: 100%;
+}
+
+
+

@@ -1,0 +1,35 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Iniciar sesión{% endblock %}
+{% block infopag %}
+<style>.errorlist{color:red;}</style>
+<main role="main">
+  <div class="container p-5 mt-5">
+    <div class="row mt-3">
+      <div class="col-md-9 mx-auto mb-5">
+      {% if 'register' in request.GET %}
+      <p class= text-center><h3>Te has registrado correctamente, ya puedes.</h3></p>
+      {% endif %}
+        <form action="" method="post">{% csrf_token %}
+          <h3 class="mb-4">Iniciar sesión</h3>
+          {% if form.non_field_errors %}
+            <p style="color:red">Usuario o contraseña incorrectos, prueba de nuevo.</p>
+          {% endif %}
+          <p>
+            <input type="text" name="username" autofocus maxlength="254" required
+              id="id_username" class="form-control" placeholder="Nombre de usuario"/>
+          </p>
+          <p>
+            <input type="password" name="password" required
+              id="id_password" class="form-control" placeholder="Contraseña"/>
+          </p>
+          <input class="btn btn-primary mt-3 " type="submit" value="Acceder" />
+        </form>
+        <p class= mt-2>
+        ¿haz olvidado tu clave? Pulse <a href="{% url 'password_reset' %}">Aqui</a> para restaurarla. 
+        </p>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}

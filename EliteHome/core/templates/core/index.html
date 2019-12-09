@@ -1,0 +1,64 @@
+{% extends 'core/base.html'  %}
+
+{% load static %}
+
+{% block infopag %}
+<div class="container">
+    <div id="slider" class="carousel slide mt-9" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#slider" data-slide-to="0" class="active"></li>
+        <li data-target="#slider" data-slide-to="1"></li>
+        <li data-target="#slider" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <div class="carousel-item active">
+          <img src="{% static 'core/ImgLujo/CasaLujoA/casalujo10.jpg' %}" width="auto" height="auto" class="d-block w-100 y-12 "alt="anuncio1" >
+        </div>
+        <div class="carousel-item ">
+            <img  src="{% static 'core/ImgLujo/CasaLujoA/casalujo11.jpg' %}" width="auto" height="auto" class="d-block-none w-100  " alt="anuncio1" >
+          </div>
+          <div class="carousel-item ">
+            <img  src="{% static 'core/ImgLujo/CasaLujoA/casalujo16.jpg' %}" width="auto" height="auto" class="d-block-none w-100  " alt="anuncio1" >
+          </div>
+      </div>
+      <a href="#slider" class="carousel-control-prev" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Anterior</span>
+      </a>
+      <a href="#slider" class="carousel-control-next" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Siguiente</span>
+      </a>
+  
+
+
+    </div>
+  </div>
+
+
+  <section class="nuevo-sitio py-5">
+      <h1 class="text-center text-uppercase mt-4 encabezado">
+          <span class="text-uppercase d-block">tu casa , tu espacio , tu vida... </span> nuestra pasion.
+      </h1>
+      <p class="text-center mt-4"></p>
+  </section>
+<div class="container-fluid">
+  <div class="embed-responsive embed-responsive-16by9">
+    <video class="embed-responsive-item" src="{% static 'core/ImgLujo/VideoLujo.mp4' %}" muted autoplay loop></video>
+
+  </div>
+</div>
+
+<div class="citas container-fluid py-5 pt-3 mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6 col-xs-12 col-sm-12 text-center">
+            <h4 >Necesitas ayuda?</h4>
+            <p class="mt-5">
+            </p>
+            <a href="{% url 'contacto' %}" class="btn btn-primary mt-3 ">Contactanos</a>
+        </div>
+    </div>
+  </div>
+
+
+{% endblock %}

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% load static %}
+    <script src="https://kit.fontawesome.com/94b3ee0d4a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'core/css/estilos.css'%}">
+    <title>Elite Home</title>
+  </head>
+  <body>
+
+    <header class="encabezado container">
+      <div class="row justify-content-md-between align-items-center">
+        <div class="col-lg-4 col-md-6 text-center">
+          <a href="{% url 'index' %}">
+          <img src="{% static 'core/ImgLujo/LogoLujo.png' %}" class="img-fluid mx-auto d-block pt-4 pb-2 " alt="logo">
+        </a>
+        </div>
+        <div class="col-lg-4 col-md-6 text-center text-lg-right">
+          <nav class="sociales">
+            <ul>
+              <li>
+                <a href="https://www.facebook.com"> <span class="sr-only">Facebook</span> </a>
+              </li>
+              <li>
+                <a href="https://twitter.com"> <span class="sr-only">Twitter</span> </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com"> <span class="sr-only">Instagram</span> </a>
+              </li>
+              <li>
+                <a href="https://www.pinterest.cl"> <span class="sr-only">Pinterest</span> </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com"> <span class="sr-only">Youtube</span> </a>
+              </li>
+
+            </ul>
+          </nav>
+        
+        </div>
+      </div>
+    </header>
+    
+    <!--fin header-->
+<!--menu navegacion-->
+<div class="container">
+    <div class="navegacion mt-4 py-1">
+       <nav class="nav-principal navbar navbar-expand-md navbar-light bg-fader">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" 
+        data-target="#nav_opciones" aria-label="Mostrar">
+
+          <span class="navbar-toggler-icon"></span>
+
+        </button> 
+
+        <a href="#" class="navbar-brand d-lg-none d-md-none d-sm-none">Elite Home</a>
+         <div class="container">
+           <div class="collapse navbar-collapse w-100" id="nav_opciones">
+           <ul class="nav nav-justified w-100 flex-column flex-sm-row">
+             <li class="nav-item">
+                      <a href="{% url 'index' %}" class="nav-link"><h5>Inicio</h5></a>
+              </li>
+             <li class="nav-item">
+                      <a href="{% url 'nosotros' %}" class="nav-link"><h5>Nosotros</h5></a>
+              </li>
+             <li class="nav-item">
+                      <a href="{% url 'casas' %}" class="nav-link"><h5>Casas</h5></a>
+              </li>
+             
+             <li class="nav-item">
+                      <a href="{% url 'contacto' %}" class="nav-link"><h5>Contacto</h5></a>
+              </li>
+              <ul>
+              {% csrf_token %}
+              {%if not request.user.is_authenticated %}
+              <li class="nav-item">
+                      <a href="{% url 'login'%}" class="nav-link"  > <h5>Acceder</h5></a>
+              </li>
+              <li class="nav-item">
+                      <a href="{% url 'signup'%}" class="nav-link"  > Registrarse</a>
+              </li>
+              {% else %}
+              <li class="nav-item">
+                      <a class="nav-link" href="{% url 'logout'%}" ><h6>Cerrar sesion</h6></a>
+              </li>
+              {% endif %}
+
+              
+              
+              
+              </ul>
+
+           </ul>
+          </div><!--fin collapse-->
+         </div><!--fin container-->
+       </nav>
+
+
+
+    </div>
+  </div>
+<!--fin menu navegacion-->
+<div id="principal">
+
+    {% block infopag %}
+
+    {% endblock %}
+
+</div>
+    
+  <footer class="footer-sitio pt-3 mt-5">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-4">
+                  <h3 class="text-uppercase text-center pb-4">Nosotros</h3>
+                  <p class=" text-center">
+                      <a href="{% url 'nosotros' %}" class="nav-link">Nosotros</a>
+                      <a href="{% url 'casas' %}"  class="nav-link">Casas</a>
+                      <a href="{% url 'contacto' %}"  class="nav-link">Contacto</a>
+                  </div>
+              <div class="col-md-4 text-center">
+                  <h3 class="text-uppercase  pb-4">Horario</h3>
+                  <p>Lunes-Sabado: 9 AM - 7PM</p>
+                  <p>Sábado: 10 AM - 2PM</p>
+                  <p>Domingo y Festivos: Cerrado</p>
+                  <nav class="sociales text-center">
+                      <ul>
+                        <li>
+                          <a href="http://facebook.com"> 
+                            <span class="sr-only"> Facebook</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="http://twitter.com"> 
+                            <span class="sr-only"> Twitter</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="http://instagram.com">
+                            <span class="sr-only"> Instagram</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="http://pinterest.com"> 
+                            <span class="sr-only"> Pinterest</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="http://youtube.com"> 
+                            <span class="sr-only"> YouTube</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </nav>
+              </div>
+              <div class="col-md-4 text-center">
+                  <h3 class="text-uppercase pb-4">Contacto</h3>
+                  <p>Casa matriz : Av. SiempreViva 555 </p>
+                  <p>Springfield, PA 5555</p>
+                  
+              </div> 
+              <hr class="w-100">
+              <p class="text-center copyright w-100">Elite Home LTDA 2019. Todos los derechos reservados</p>
+          </div><!--row-->
+      </div> <!--container-->
+
+  </footer>
+
+  </body>
+</html>

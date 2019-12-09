@@ -1,0 +1,117 @@
+{% extends 'core/base.html'  %}
+
+{% load static %}
+
+
+
+{% block infopag %}
+
+<div class="container pt-4">
+    <div class="row no-gutters">
+        <div class="col-12 hero">
+            <img src="{% static 'core/ImgLujo/lujo2.jpg' %}" class="img-fluid">
+            
+        </div>
+    </div>
+</div>
+
+
+</div>
+</div>
+<div class="citas container-fluid py-5 pt-3 mt-5">
+<div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6 col-xs-12 col-sm-12 text-center">
+        
+        <p class="mt-5">
+        </p>
+        
+    </div>
+</div>
+</div>
+
+<div class="container-fluid pt-4 ml-2 mr-2">
+<div class="row justify-content-center">
+<main class="col-lg-8 contenido-principal">
+  <h2 class="d-block mt-5 text-center" >
+    Contactenos
+  </h2>
+
+
+
+
+
+<!--<form class="p-5 mt-5 pt-3 formulario-contacto needs-validation" action="" method="POST">
+ {% csrf_token %}
+  <table>
+    
+
+    {{form.as_table}}
+  
+  
+  
+  </table>
+
+  <input class="btn btn-primary mt-4" type="submit" value="Enviar" />
+  <input class="btn btn-primary mt-4" type="reset" value="Borrar todo"/>
+</form>-->
+{% if 'ok' in request.GET %}
+   <p>
+   <b>Nos enviaste un mensaje, en breve nos pondermos en contacto, </b>
+   </p>
+{% endif %}
+<div class=citas container-fluid >
+ <form action="" method="POST">
+                {% csrf_token %}
+                <div class="form-group ml-5 mt-4 ">
+                    <label class= my-3><b>Nombre</b></label>
+                    <div class="input-group col-lg-12">
+                        {{form.name}}
+                    </div>
+                    {{form.name.errors}}
+                </div>
+                <div class="form-group ml-5 mt-4">
+                    <label class= my-3><b>Email</b></label>
+                    <div class="input-group col-lg-12">
+                        {{form.email}}
+                    </div>
+                    {{form.email.errors}}
+                </div>
+                <div class="form-group ml-5 mt-4">
+                    <label class= my-3><b>Numero de contacto</b></label>
+                    <div class="input-group col-lg-12">
+                        {{form.number}}
+                    </div>
+                    {{form.number.errors}}
+                </div>
+                <div class="form-group ml-5 mt-4">
+                    <label class= my-3><b>Mensaje</b></label>
+                    <div class="input-group col-lg-12">
+                        {{form.content}}
+                    </div>
+                    {{form.content.errors}}
+                </div>
+                <div class="text-center">
+                    <input type="submit" class="btn btn-primary my-3 " value="Enviar" >
+                </div>
+</form>
+</div>
+
+
+
+
+
+</div>
+</div>
+
+
+<div class="citas container-fluid py-5 pt-3 mt-5">
+<div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6 col-xs-12 col-sm-12 text-center">
+        
+          <p class="mt-5">
+          </p>
+          
+    </div>
+</div>
+</div>
+{% endblock %}
